@@ -531,15 +531,15 @@
 					<!--banner轮播-->
 					<div id="myCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
 					  <ol class="carousel-indicators">
-					    <!-- <li data-target="#myCarousel" data-slide-to="0" class="active"></li> -->
+					     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					    <li data-target="#myCarousel" data-slide-to="{{$index}}" class="{{$index==0?'active':''}}" ng-repeat="item in contentList[1]"></li>
 					  </ol>
 					  <div class="carousel-inner">
-					   <!--  <div class="active item">
+					     <div class="active item">
 					    <a href="http://baidu2.wypxj.com/">
 					    	<img src="img/banner1.jpg"  />
 					      </a>
-					    </div> -->
+					    </div>
 					    <div class="{{$index==0?'active':''}} item" ng-repeat="item in contentList[1]">
 					    <a href="{{item.url}}">
 					    	<img src="{{item.pic}}"  width="730" height="454"/>

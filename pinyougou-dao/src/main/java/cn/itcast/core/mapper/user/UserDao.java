@@ -24,7 +24,9 @@ public interface UserDao {
 
     int updateByExample(@Param("record") User record, @Param("example") UserQuery example);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(User user, UserQuery record);
 
     int updateByPrimaryKey(User record);
+
+    void updateByPrimaryKeySelective(User user);
 }

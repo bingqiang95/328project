@@ -106,6 +106,7 @@
     <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
+
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
