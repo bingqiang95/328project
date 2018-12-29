@@ -10,4 +10,10 @@ public interface ItemCatService {
     ItemCat findOne(Long id);
 
     List<ItemCat> findAll();
+
+    void delete(Long[] ids);
+
+    void update(ItemCat itemCat);
+
+    void add(ItemCat itemCat);
 }

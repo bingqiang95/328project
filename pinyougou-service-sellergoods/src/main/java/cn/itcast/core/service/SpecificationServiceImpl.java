@@ -79,6 +79,7 @@ public class SpecificationServiceImpl implements  SpecificationService {
 
         //规格表 修改
         specificationDao.updateByPrimaryKeySelective(vo.getSpecification());
+        Integer status = vo.getSpecification().getStatus();
 
         //规格选项结果集表
         //1:先删除  外键
@@ -91,6 +92,7 @@ public class SpecificationServiceImpl implements  SpecificationService {
         //规格选项结果集 外键
         List<SpecificationOption> specificationOptionList = vo.getSpecificationOptionList();
         for (SpecificationOption specificationOption : specificationOptionList) {
+            specificationOption.setStatus(status);
             //外键
             specificationOption.setSpecId(vo.getSpecification().getId());
             //保存

@@ -87,7 +87,7 @@
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
-    id,spec_name
+    id,spec_name,status
     from tb_specification
     where id = #{id,jdbcType=BIGINT}
   </select>
@@ -102,8 +102,8 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.itcast.core.pojo.specification.Specification" >
-    insert into tb_specification (id, spec_name)
-    values (#{id,jdbcType=BIGINT}, #{specName,jdbcType=VARCHAR})
+    insert into tb_specification (id, spec_name,status)
+    values (#{id,jdbcType=BIGINT}, #{specName,jdbcType=VARCHAR},#{status,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.itcast.core.pojo.specification.Specification" useGeneratedKeys="true" keyProperty="id" >
 <!--    <selectKey order="AFTER" keyProperty="id" resultType="Long">
@@ -117,6 +117,9 @@
       <if test="specName != null" >
         spec_name,
       </if>
+      <if test="status != null" >
+        status,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -124,6 +127,9 @@
       </if>
       <if test="specName != null" >
         #{specName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>

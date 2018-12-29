@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -41,6 +42,25 @@ public class ItemCatServiceImpl implements  ItemCatService {
     @Override
     public List<ItemCat> findAll() {
         return itemCatDao.selectByExample(null);
+    }
+
+    @Override
+    public void delete(Long[] ids) {
+        ItemCatQuery itemCatQuery = new ItemCatQuery();
+        itemCatQuery.createCriteria().andIdIn(Arrays.asList(ids));
+        itemCatDao.deleteByExample(itemCatQuery);
+
+    }
+
+    @Override
+    public void update(ItemCat itemCat) {
+        itemCatDao.updateByPrimaryKeySelective(itemCat);
+
+    }
+
+    @Override
+    public void add(ItemCat itemCat) {
+        itemCatDao.insertSelective(itemCat);
     }
 
 }

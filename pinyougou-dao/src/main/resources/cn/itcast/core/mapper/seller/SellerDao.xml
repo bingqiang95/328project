@@ -146,7 +146,7 @@
       #{legalPersonCardId,jdbcType=VARCHAR}, #{bankUser,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.itcast.core.pojo.seller.Seller" >
+  <insert id="insertSelective" parameterType="cn.itcast.core.pojo.seller.Seller">
     insert into tb_seller
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="sellerId != null" >

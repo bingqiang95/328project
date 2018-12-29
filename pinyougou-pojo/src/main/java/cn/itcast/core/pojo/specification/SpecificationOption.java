@@ -22,6 +22,15 @@ public class SpecificationOption implements Serializable {
      * 排序值
      */
     private Integer orders;
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     private static final long serialVersionUID = 1L;
 

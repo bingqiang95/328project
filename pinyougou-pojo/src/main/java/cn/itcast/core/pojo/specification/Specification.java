@@ -12,6 +12,15 @@ public class Specification implements Serializable {
      * 名称
      */
     private String specName;
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     private static final long serialVersionUID = 1L;
 
